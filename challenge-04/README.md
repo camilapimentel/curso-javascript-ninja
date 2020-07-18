@@ -113,7 +113,6 @@ citado acima, no lugar de "pessoas".
 carro.adicionarPessoa = function(pessoas) {
   var quantidadePessoasCabem = carro.assentos - carro.quantidadePessoas;
   carro.quantidadePessoas += pessoas;
-  var frase;
 
   if (carro.quantidadePessoas === carro.assentos) {
      return 'O carro já está lotado!';
@@ -129,9 +128,12 @@ carro.adicionarPessoa = function(pessoas) {
     return 'Só cabe mais ' + quantidadePessoasCabem + ' pessoa!' ;
   }
 
-  if (carro.quantidadePessoas)
+  if (carro.quantidadePessoas > 1) {
+    return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
+  } else {
+    return 'Já temos ' + carro.quantidadePessoas + ' pessoa no carro!';
+  }
 
-  return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
 }
 
 
