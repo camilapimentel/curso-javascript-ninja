@@ -8,22 +8,34 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 
-var isTruthy = function() {
-  if (false) {
-    return false
-  } if (!false) {
-    return true
-  }
-}
+var isTruthy = function(param) {
+ return !!param;
+};
 
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+isTruthy(false);
+isTruthy(null);
+isTruthy(undefined);
+isTruthy('');
+isTruthy(0);
+isTruthy(-0);
+isTruthy(NaN);
+
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+isTruthy(1);
+isTruthy('camila');
+isTruthy([]);
+isTruthy({});
+isTruthy(true);
+isTruthy(6);
+isTruthy(7);
+isTruthy(8);
+isTruthy(9);
+isTruthy(10);
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -47,7 +59,7 @@ var carro = {
   quantasPortas: 2, 
   assentos: 5, 
   quantidadePessoas: 0
-}
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -109,7 +121,7 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 
-
+/*
 carro.adicionarPessoa = function(pessoas) {
   var quantidadePessoasCabem = carro.assentos - carro.quantidadePessoas;
   carro.quantidadePessoas += pessoas;
@@ -133,7 +145,24 @@ carro.adicionarPessoa = function(pessoas) {
   } else {
     return 'Já temos ' + carro.quantidadePessoas + ' pessoa no carro!';
   }
+}
+*/
 
+carro.adicionarPessoa = function(pessoas) {
+  var totalPessoas = carro.quantidadePessoas + pessoas;
+
+  if (carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) {
+     return 'O carro já está lotado!';
+  }
+
+  if ( totalPessoas > carro.assentos) {
+    var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+    var pluralOuSingular = quantasPessoasCabem === 1 ? ' pessoa' : ' pessoas';
+    return 'Só cabem mais ' + quantidadePessoasCabem + pluralOuSingular + '!';
+  }
+   
+  carro.quantidadePessoas += pessoas
+  return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
 }
 
 
@@ -181,14 +210,16 @@ carro.adicionarPessoa(4); // Só cabem mais 3 pessoas!
 carro.adicionarPessoa(3); // O carro já está lotado!
 
 // Tire 4 pessoas do carro.
-
+/*
 carro.tirarPessoa = function(pessoas) {
   carro.quantidadePessoas -= pessoas;
   return pessoas + ' pessoas foram retiradas do carro.'
 }
 
-carro.tirarPessoa(4); // 4 pessoas foram retiradas do carro.
+carro.adicionarPessoa(4); // 4 pessoas foram retiradas do carro.
+*/
 
+carro.adicionarPessoa(-4);
 
 // Adicione 10 pessoas no carro.
 
