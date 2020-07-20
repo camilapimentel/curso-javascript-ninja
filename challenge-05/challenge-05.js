@@ -9,7 +9,7 @@ Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
 function retornaArr(arr) {
    return arr;
-};
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
@@ -22,21 +22,24 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-function retornaParam(arr, num) {
-  num = arr[0];
-  return arr[0];
+function retornaParam(arr, index) {
+  return arr[index];
 }
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var arrCinco = ['nome', 25, true, null, undefined];
+var arrCinco = ['nome', 25, true, [1, 2, 3] , {b = 2} ;
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-retornaArr(arrCinco);
+console.log (retornaArr(arrCinco, 0));
+console.log (retornaArr(arrCinco, 1));
+console.log (retornaArr(arrCinco, 2));
+console.log (retornaArr(arrCinco, 3));
+console.log (retornaArr(arrCinco, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
