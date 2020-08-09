@@ -57,17 +57,17 @@ os livros.
 */
 function book(nome) {
     var livros = {
-          crepusculo: {
+          'crepusculo': {
           quantidadePaginas: 100,
           autor: 'Stephenie Meyer 1',
           editora: '	Little, Brown and Company 1'
-        },
-        eclipse: {
+         },
+         'eclipse': {
            quantidadePaginas: 200,
            autor: 'Stephenie Meyer 2',
            editora: '	Little, Brown and Company 2'
-        },
-        amanhecer: {
+         },
+         'amanhecer': {
            quantidadePaginas: 300,
            autor: 'Stephenie Meyer 3',
            editora: '	Little, Brown and Company 3'
@@ -78,17 +78,8 @@ function book(nome) {
     return livros
   };
   
-  if (nome === 'crepusculo') {
-    return livros.crepusculo;
-  };
-
-  if (nome === 'eclipse') {
-    return livros.eclipse;
-  };
-
-  if (nome === 'amanhecer') {
-    return livros.amanhecer;
-  };
+  return livros[nome];
+  
 }
 
 /*
@@ -100,17 +91,19 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log( 'O livro ' +  book('crepusculo').quantidadePaginas );
+
+var bookName = 'Crepusculo';
+console.log( 'O livro ' + bookName + ' tem ' +  book(bookName).quantidadePaginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log( 'O autor do livro é ' +  book('crepusculo').autor );
+console.log( 'O autor do livro ' + bookName + ' é ' +  book(bookName).autor );
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log( 'O livro foi publicado pela editora ' +  book('crepusculo').editora );
+console.log( 'O livro ' + bookName + ' foi publicado pela editora ' +  book(bookName).editora );
